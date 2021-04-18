@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<h2>将来のあなたの資産の金額</h2>
+<p>
+{{ asset }} の将来の金額: {{ 'JPY{:,d}'.format(future_value) }}　
+</p>
+
+<p>
+<a href="calculate" class="btn btn-primary">再度計算する</a>
+
+</p>
+
+{% endblock %}

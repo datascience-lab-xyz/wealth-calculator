@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<script type="text/javascript">
+    function validation(){
+       if (assumption.top_up_amount.value == 0) {
+           alert("積立金額を入力してください");
+           return false;
+       }
+       else{
+           return true;
+           }
+       }
+</script>
+
+
+{% endblock %}
+
+
+
+{% block body %}
+<h2>積立の計画を入力してください</h2>
+
+<form action="/" method="POST" name="assumption">
+    <p>
+    <label for="asset">積立する資産の名前</label>
+    <input type="text" placeholder="日本株" name="asset_name">
+    </p>
+    <p>
+    <label for="initial_amount">現在の資産額</label>
+    <input type="float" inputmode="numeric" value="0" name="initial_amount">（円）
+    </p>
+    <p>
+    <label for="top_up_amount">毎月積立する金額</label>
+    <input type="float" name="top_up_amount">（円）
+    </p>
+    <p>
+    <label for="return_ratio">想定する資産の利回り（年率, %）</label>
+    <input type="float" name="return_ratio">（%）
+    </p>
+    <p>
+    <label for="duration_m">積立期間（月）</label>
+    <input type="number" name="duration_m">（月）
+    </p>
+    <p>
+    <input type="submit" formaction="result" value="将来の金額を計算する"  class="btn btn-primary" onClick="return validation();">
+    </p>
+</form>
+
+{% endblock %}
