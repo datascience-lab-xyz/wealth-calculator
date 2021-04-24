@@ -19,32 +19,48 @@
 
 
 {% block body %}
-<h2>積立の計画を入力してください</h2>
+<h2 class="text-center mb-5">積立の計画を入力してください</h2>
 
-<form action="/" method="POST" name="assumption">
-    <p>
-    <label for="asset">積立する資産の名前</label>
-    <input type="text" placeholder="日本株" name="asset_name">
-    </p>
-    <p>
-    <label for="initial_amount">現在の資産額</label>
-    <input type="float" inputmode="numeric" value="0" name="initial_amount">（円）
-    </p>
-    <p>
-    <label for="top_up_amount">毎月積立する金額</label>
-    <input type="float" name="top_up_amount">（円）
-    </p>
-    <p>
-    <label for="return_ratio">想定する資産の利回り（年率, %）</label>
-    <input type="float" name="return_ratio">（%）
-    </p>
-    <p>
-    <label for="duration_m">積立期間（月）</label>
-    <input type="number" name="duration_m">（月）
-    </p>
-    <p>
-    <input type="submit" formaction="result" value="将来の金額を計算する"  class="btn btn-primary" onClick="return validation();">
-    </p>
+<form class="form-horizontal" action="/" method="POST" name="assumption">
+    <div class="form-group row my-3">
+        <label class="col-sm-5 control-label" for="asset">積立する資産の名前</label>
+        <div class="col-sm-6">
+            <input type="text" placeholder="日本株" name="asset_name" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-group row my-3">
+        <label class="col-sm-5 control-label" for="initial_amount">現在の資産額（円）</label>
+        <div class="col-sm-6">
+            <input class="form-control" type="float" inputmode="numeric" value="0" name="initial_amount">
+        </div>
+    </div>
+
+    <div class="form-group row my-3">
+        <label class="col-sm-5 control-label" for="top_up_amount">毎月積立する金額（円）</label>
+        <div class="col-sm-6">
+            <input class="form-control" type="float" name="top_up_amount">
+        </div>
+    </div>
+
+    <div class="form-group row my-3">
+        <label class="col-sm-5 control-label" for="return_ratio">想定する資産の利回り（年率, %）</label>
+        <div class="col-sm-6">
+            <input class="form-control" type="float" name="return_ratio">
+        </div>
+    </div>
+
+    <div class="form-group row my-3">
+        <label class="col-sm-5 control-label" for="duration_m">積立期間（月）</label>
+        <div class="col-sm-6">
+            <input class="form-control" type="number" name="duration_m">
+        </div>
+    </div>
+
+    <div class="text-center my-5">
+        <input type="submit" formaction="result" value="将来の金額を計算する"  class="btn btn-primary" onClick="return validation();">
+    </div>
+
 </form>
 
 {% endblock %}

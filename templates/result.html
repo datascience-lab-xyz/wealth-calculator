@@ -3,14 +3,13 @@
 
 {% block body %}
 
-<h2>将来のあなたの資産の金額</h2>
-<p>
-{{ asset }} の将来の金額: {{ 'JPY{:,d}'.format(future_value) }}　
-</p>
+<h2>{{ asset }}の将来の資産の金額</h2>
+<h3 class="text-center my-3">
+{{ '{:,d}円'.format(future_value) }}　
+</h3>
 
-<p>
-<a href="calculate" class="btn btn-primary">再度計算する</a>
-
+<p class="text-center">
+    <a href="calculate" class="btn btn-primary">再度計算する</a>
 </p>
 
 {% endblock %}
