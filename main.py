@@ -37,6 +37,5 @@ def show_result():
 
         return render_template('result.html', asset=asset, future_value=future_value)
 
-
 if __name__ == '__main__':
     app.run(debug=True)
